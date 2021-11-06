@@ -24,20 +24,23 @@ class Blockchain:
             timestamp=time()
         )
         self.pending_transactions = []
-        if self.validate_block(block):
-            self.chain.append(block)
-            return True
+        if not len(self.chain):
+            valid = True
+        elif self.validate_block(block, self.last_block):
+            valid = True
         else:
             print('Unable to add block, wrong hash.')
-            return False
+            valid = False
+        if valid:
+            self.chain.append(block)
+        return valid
 
-    def validate_block(self, block: Block) -> bool:
-        previous_block = self.last_block
+    def validate_block(self, block: Block, previous_block: Block) -> bool:
         if block.index != previous_block.index + 1:
             return False
         elif block.previous_hash != previous_block.comp_hash:
             return False
-        elif block.timestamp < previous_block.timestamp:
+        elif block.timestamp <= previous_block.timestamp:
             return False
         return True
 
