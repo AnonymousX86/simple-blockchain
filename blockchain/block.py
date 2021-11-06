@@ -16,7 +16,7 @@ class Block:
         string_block = '{0}{1}{2}{3}{4}'.format(
             self.index,
             self.timestamp,
-            list(tr for tr in self.transactions),
+            list(tr.__repr__() for tr in self.transactions),
             self.proof,
             self.previous_hash
         )
