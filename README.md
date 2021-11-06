@@ -1,2 +1,2 @@
-# simple-blockchain
- Demo blockchain project.
+# Simple Blockchain
+Demo blockchain project.
