@@ -2,7 +2,7 @@
 """
 Demo blockchain project.
 """
-from . import Blockchain
+from blockchain import Blockchain
 
 if __name__ == '__main__':
     bc = Blockchain()
