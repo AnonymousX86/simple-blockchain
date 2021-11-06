@@ -12,7 +12,7 @@ class Blockchain:
 
         self.new_block(
             proof=100,
-            previous_hash='Some James have created a Python blockchain.'
+            previous_hash='Genesis block.'
         )
 
     def new_block(self, proof, previous_hash=None) -> bool:
