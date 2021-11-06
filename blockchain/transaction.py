@@ -6,4 +6,7 @@ class Transaction:
         self.content = amount
 
     def __str__(self):
-        return f"{self.sender} -> {self.recipient} ({self.content})"
+        return f'{self.sender} -> {self.recipient} ({self.content})'
+
+    def __repr__(self):
+        return f'{self.sender}{self.recipient}{self.content}'
