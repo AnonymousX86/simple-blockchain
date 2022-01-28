@@ -28,6 +28,8 @@ class Blockchain:
             valid = True
         elif self.validate_block(block, self.last_block):
             valid = True
+        elif self.proof_of_work(proof):
+            valid = True
         else:
             print('Unable to add block, wrong hash.')
             valid = False
@@ -44,8 +46,8 @@ class Blockchain:
             return False
         return True
 
-    def proof_of_work(self, proof):
-        pass
+    def proof_of_work(self, proof) -> bool:
+        return proof == 100
 
     @property
     def last_block(self) -> Block:
