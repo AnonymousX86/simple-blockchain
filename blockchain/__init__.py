@@ -53,11 +53,11 @@ class Blockchain:
     def last_block(self) -> Block:
         return self.chain[-1]
 
-    def new_transaction(self, sender, recipient, amount: int) -> int:
+    def new_transaction(self, sender, recipient, content: str) -> int:
         transaction = Transaction(
             sender=sender,
             recipient=recipient,
-            amount=amount
+            content=content
         )
         self.pending_transactions.append(transaction)
         return self.last_block.index + 1
