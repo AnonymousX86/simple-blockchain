@@ -12,7 +12,7 @@ class Block:
         self.timestamp = timestamp
 
     @property
-    def comp_hash(self):
+    def comp_hash(self) -> str:
         string_block = '{0}{1}{2}{3}{4}'.format(
             self.index,
             self.timestamp,
